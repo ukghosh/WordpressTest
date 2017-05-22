@@ -1,19 +1,34 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Wordpress.steps;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
 namespace Wordpress.tests
 {
     [TestClass]
     public class UnitTest1
     {
+        private Dependencies Test;
+        private IWebDriver Driver;
+        [TestInitialize]
+        public void TestInit()
+        {
+            Driver = new ChromeDriver();
+            Test = new Dependencies();
+            Test.Driver = this.Driver;
+        }
         [TestMethod]
         public void TestMethod1()
         {
+            WordPressHome c = new WordPressHome(Test);
+            c.OpenPage();
         }
 
-        [TestMethod]
-        public void TestMethod2()
+        [TestCleanup]
+        public void TestClean()
         {
+            Driver.Quit();
         }
     }
 }

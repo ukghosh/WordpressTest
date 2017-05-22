@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wordpress.tests", "Wordpress.tests\Wordpress.tests.csproj", "{FB509D37-FF97-4B06-B29A-B361369D0646}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wordpress.steps", "Wordpress.steps\Wordpress.steps.csproj", "{0278BF56-DA1F-4801-B930-D0D820A0490E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FB509D37-FF97-4B06-B29A-B361369D0646}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB509D37-FF97-4B06-B29A-B361369D0646}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB509D37-FF97-4B06-B29A-B361369D0646}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0278BF56-DA1F-4801-B930-D0D820A0490E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0278BF56-DA1F-4801-B930-D0D820A0490E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0278BF56-DA1F-4801-B930-D0D820A0490E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0278BF56-DA1F-4801-B930-D0D820A0490E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
