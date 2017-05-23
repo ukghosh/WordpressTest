@@ -10,20 +10,21 @@ namespace Wordpress.tests
     public class UnitTest1
     {
         private Dependencies Test;
-        private IWebDriver Driver;
+       
         [TestInitialize]
         public void TestInit()
         {
-            DriverContext.New();
-            //Driver = DriverContext.Driver;
+            //DriverContext.New(new ChromeProvider());
+            //DriverContext.New(new IEProvider());
+            DriverContext.New(ProviderFactory.AppConfig());
             Test = new Dependencies();
-          //  Test.Driver = this.Driver;
+          
         }
         [TestMethod]
         public void TestMethod1()
         {
-            WordPressHome c = new WordPressHome(Test);
-            c.OpenPage();
+            WordPressHome wordpressHome = new WordPressHome(Test);
+            wordpressHome.OpenPage();
         }
 
         [TestCleanup]

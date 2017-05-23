@@ -24,7 +24,7 @@ namespace Wordpress.steps
             
         }
 
-        public static void New()
+        public static void New (IDriverProvider provider)
         {
             if (Context != null)
             {
@@ -32,7 +32,7 @@ namespace Wordpress.steps
             }
 
             Context = new DriverContext();
-            Context._driver = new ChromeDriver();
+            Context._driver = provider.GetDriver();
         }
         
         public static void Release()
