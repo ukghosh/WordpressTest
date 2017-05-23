@@ -14,9 +14,10 @@ namespace Wordpress.tests
         [TestInitialize]
         public void TestInit()
         {
-            Driver = new ChromeDriver();
+            DriverContext.New();
+            //Driver = DriverContext.Driver;
             Test = new Dependencies();
-            Test.Driver = this.Driver;
+          //  Test.Driver = this.Driver;
         }
         [TestMethod]
         public void TestMethod1()
@@ -28,7 +29,7 @@ namespace Wordpress.tests
         [TestCleanup]
         public void TestClean()
         {
-            Driver.Quit();
+            DriverContext.Release();
         }
     }
 }

@@ -9,7 +9,13 @@ namespace Wordpress.steps
 {
     public class Dependencies
     {
-       public IWebDriver Driver;
+       public IWebDriver Driver
+        {
+            get
+            {
+                return DriverContext.Driver;
+            }
+        }
 
     }
 }
