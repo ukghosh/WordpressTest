@@ -9,22 +9,23 @@ namespace Wordpress.tests
     [TestClass]
     public class UnitTest1
     {
-        private Dependencies Test;
+        // Dependencies class is Injected here with the use of Dependencies.Inject(property)
+        // private Dependencies Test { get { return Dependencies.Inject; } }    - or replaced with code below
+        private Dependencies Test => Dependencies.Inject;
        
         [TestInitialize]
         public void TestInit()
-        {
-            //DriverContext.New(new ChromeProvider());
-            //DriverContext.New(new IEProvider());
+        {            
             DriverContext.New(ProviderFactory.AppConfig());
-            Test = new Dependencies();
+            Dependencies.New();         
+          
           
         }
+
         [TestMethod]
         public void TestMethod1()
-        {
-            WordPressHome wordpressHome = new WordPressHome(Test);
-            wordpressHome.OpenPage();
+        {           
+           Test.WordpressHome.OpenPage();
         }
 
         [TestCleanup]
