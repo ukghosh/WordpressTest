@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Wordpress.steps.PageObjects;
 
 namespace Wordpress.steps
 {
@@ -16,12 +17,14 @@ namespace Wordpress.steps
         private Dependencies()
         {
             this.WordpressHome = new WordPressHome(this);
+            this.LoginForm = new LoginPage(this);
         }
 
         //the created new instance is accessed by this property 
         public static Dependencies Inject { get { return _context; } }
 
         public WordPressHome WordpressHome { get; private set; }
+        public LoginPage LoginForm { get; private set; }
 
         public IWebDriver Driver
         {

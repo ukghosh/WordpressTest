@@ -50,14 +50,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseWordpressPage.cs" />
     <Compile Include="ChromeProvider.cs" />
     <Compile Include="Dependencies.cs" />
     <Compile Include="DriverContext.cs" />
     <Compile Include="FirefoxProvider.cs" />
     <Compile Include="IDriverProvider.cs" />
     <Compile Include="IEProvider.cs" />
+    <Compile Include="PageObjects\LoginPage.cs" />
     <Compile Include="ProviderFactory.cs" />
-    <Compile Include="WordPressHome.cs" />
+    <Compile Include="PageObjects\WordPressHome.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

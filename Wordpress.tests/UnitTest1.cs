@@ -26,7 +26,26 @@ namespace Wordpress.tests
         public void TestMethod1()
         {           
            Test.WordpressHome.OpenPage();
+           Test.WordpressHome.OpenLoginForm();
+           Test.LoginForm.Login();
         }
+
+        [TestMethod]
+        public void TestMethod2()
+        {
+            Test.WordpressHome.OpenPage();
+            Test.WordpressHome.OpenLoginForm();
+        }
+
+        [TestMethod]
+        public void TestMethod3()
+        {
+            Test.WordpressHome
+                .OpenPage()
+                .OpenLoginForm();
+        }
+
+
 
         [TestCleanup]
         public void TestClean()
