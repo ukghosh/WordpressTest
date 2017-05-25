@@ -7,8 +7,12 @@ namespace Wordpress.steps
 {
     public class WordPressHome :BaseWordpressPage
     {
+        IWebElement LoginLink;
+        IWebElement PageHeader;
         public WordPressHome(Dependencies test) : base(test)
         {
+            
+
         }
 
         //public WordPressHome(Dependencies test)
@@ -24,12 +28,16 @@ namespace Wordpress.steps
 
         public override bool IsLoaded()
         {
-            return false;
+            LoginLink = Test.Driver.FindElement(By.Id("navbar-login-link"));
+            PageHeader = Test.Driver.FindElement(By.ClassName("wpcom-logo"));
+            return LoginLink.Displayed && PageHeader.Displayed;
         }
 
+       
         public void OpenLoginForm()
         {
-            var LoginLink = Test.Driver.FindElement(By.Id("navbar-login-link"));
+            LoginLink = Test.Driver.FindElement(By.Id("navbar-login-link"));
+            PageHeader = Test.Driver.FindElement(By.ClassName("wpcom-logo"));
             LoginLink.Click();
             Test.LoginForm.GoLive();
         }

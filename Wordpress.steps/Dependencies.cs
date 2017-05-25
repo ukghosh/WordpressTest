@@ -37,10 +37,7 @@ namespace Wordpress.steps
         //instance of the class is created here
         public static void New()
         {
-            if (_context != null)
-            {
-                throw new Exception("The Dependencies instance is not null!!");
-            }
+           
             _context = new Dependencies();
 
         }
