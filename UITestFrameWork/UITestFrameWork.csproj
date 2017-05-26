@@ -57,6 +57,14 @@
     <Compile Include="IEProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProviderFactory.cs" />
+    <Compile Include="WebObjects\CheckBox.cs" />
+    <Compile Include="WebObjects\HyperLink.cs" />
+    <Compile Include="WebObjects\RadioButton.cs" />
+    <Compile Include="WebObjects\SelectTag.cs" />
+    <Compile Include="WebObjects\SeleniumTable.cs" />
+    <Compile Include="WebObjects\TextInput.cs" />
+    <Compile Include="WebObjects\WebCollections.cs" />
+    <Compile Include="WebObjects\WebObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

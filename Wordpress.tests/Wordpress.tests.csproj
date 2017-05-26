@@ -77,7 +77,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="chromedriver.exe" />
+    <Content Include="chromedriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="geckodriver.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

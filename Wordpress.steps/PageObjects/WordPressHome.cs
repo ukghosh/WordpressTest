@@ -21,8 +21,9 @@ namespace Wordpress.steps
         //}
 
         public WordPressHome OpenPage()
-        {           
-            Test.Driver.Navigate().GoToUrl(new Uri("https://wordpress.com/"));
+        {
+            //Test.Driver.Navigate().GoToUrl(new Uri("https://wordpress.com/"));
+            Test.Driver.Navigate().GoToUrl("https://wordpress.com/");
             return this;
         }
 

@@ -33,7 +33,7 @@ namespace Wordpress.steps
             }
             catch
             {
-                return false;
+                throw new Exception("IsLoaded is successful!!??");
             }
         }
 
@@ -65,7 +65,7 @@ namespace Wordpress.steps
             }
             catch (Exception)
             {
-                return false;
+                throw new Exception("Safe is not true!!??");
             }
         }
 
