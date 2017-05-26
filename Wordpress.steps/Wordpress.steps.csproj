@@ -51,14 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseWordpressPage.cs" />
-    <Compile Include="ChromeProvider.cs" />
     <Compile Include="Dependencies.cs" />
-    <Compile Include="DriverContext.cs" />
-    <Compile Include="FirefoxProvider.cs" />
-    <Compile Include="IDriverProvider.cs" />
-    <Compile Include="IEProvider.cs" />
     <Compile Include="PageObjects\LoginPage.cs" />
-    <Compile Include="ProviderFactory.cs" />
     <Compile Include="PageObjects\WordPressHome.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -66,15 +60,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="chromedriver.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="geckodriver.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="IEDriverServer.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <ProjectReference Include="..\UITestFrameWork\UITestFrameWork.csproj">
+      <Project>{c2497daf-22ae-4969-a1fa-f4485b30ce62}</Project>
+      <Name>UITestFrameWork</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

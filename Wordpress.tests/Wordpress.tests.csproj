@@ -63,6 +63,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UITestFrameWork\UITestFrameWork.csproj">
+      <Project>{c2497daf-22ae-4969-a1fa-f4485b30ce62}</Project>
+      <Name>UITestFrameWork</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Wordpress.steps\Wordpress.steps.csproj">
       <Project>{0278bf56-da1f-4801-b930-d0d820a0490e}</Project>
       <Name>Wordpress.steps</Name>
@@ -74,6 +78,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="chromedriver.exe" />
+    <Content Include="geckodriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IEDriverServer.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

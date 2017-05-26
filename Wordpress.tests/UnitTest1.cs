@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Wordpress.steps;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using UITestFrameWork;
 
 namespace Wordpress.tests
 {
