@@ -4,25 +4,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UITestFrameWork.WebObjects;
 
 namespace Wordpress.steps.PageObjects
 {
    public class LoginPage : BaseWordpressPage
     {
-        IWebElement userName;
-        IWebElement password;
+        TextInput userName;
+        TextInput password;
         IWebElement loginButton;
         public LoginPage(Dependencies test) : base(test)
         {
-            
-            
+            userName = new TextInput(By.Id("user_login"));
+            password = new TextInput(By.Id("user_pass"));
+            //loginButton = Test.Driver.FindElement(By.Id("wp-submit"));
 
         }
 
         public override bool IsLoaded()
-        {
-            userName = Test.Driver.FindElement(By.Id("user_login"));
-            password = Test.Driver.FindElement(By.Id("user_pass"));
+        {           
+            
             loginButton = Test.Driver.FindElement(By.Id("wp-submit"));
             return userName.Displayed && password.Displayed && loginButton.Displayed;
         }
@@ -35,15 +36,13 @@ namespace Wordpress.steps.PageObjects
 
         private void EnterCredentials()
         {
-            userName = Test.Driver.FindElement(By.Id("user_login"));
-            password = Test.Driver.FindElement(By.Id("user_pass"));
-            userName.SendKeys("ujjwalsblogblog");
-            password.SendKeys("Bruteforce71");
+           
+            userName.SetValue("ujjwalsblogblog");
+            password.SetValue("password@1");
         }
 
         private void clickLogin()
-        {
-          
+        {          
                 loginButton = Test.Driver.FindElement(By.Id("wp-submit"));
                 loginButton.Click();           
             

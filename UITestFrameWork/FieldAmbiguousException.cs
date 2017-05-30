@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UITestFrameWork.WebObjects
+namespace UITestFrameWork
 {
-   public class WebCollections
+   public class FieldAmbiguousException : Exception
     {
+        
     }
 }

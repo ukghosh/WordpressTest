@@ -1,14 +1,11 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using UITestFrameWork;
 
 namespace Wordpress.steps
 {
-   public class BaseWordpressPage
+    public class BaseWordpressPage
     {
         protected Dependencies Test;
         public int TIMEOUT_SEC;
@@ -39,23 +36,11 @@ namespace Wordpress.steps
 
         public void GoLive(string message = "", int timeout = -1)
         {
-            WaitUntil(istrue => SafeIsLoaded(), message, timeout);
-           
+           DriverContext.Current.WaitUntil(istrue => SafeIsLoaded(), message, timeout);
+
         }
 
-        public void WaitUntil(Func<IWebDriver, bool> isTrue, string message = "", int timeout = -1)
-        {
-            try
-            {
-                var wait = new WebDriverWait(this.Test.Driver, TimeSpan.FromSeconds(this.TimeOut(timeout)));
-                wait.Until(delegate { return this.SafeIsTrue(isTrue); });
-            }
-            catch (Exception)
-            {
-                //this.Log(message);
-                throw new Exception("The page is not loaded!!");
-            }
-        }
+      
 
         private bool SafeIsTrue(Func<IWebDriver, bool> isTrue)
         {

@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="ChromeProvider.cs" />
     <Compile Include="DriverContext.cs" />
+    <Compile Include="FieldAmbiguousException.cs" />
     <Compile Include="FirefoxProvider.cs" />
     <Compile Include="IDriverProvider.cs" />
     <Compile Include="IEProvider.cs" />

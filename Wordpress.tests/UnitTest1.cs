@@ -46,7 +46,27 @@ namespace Wordpress.tests
                 .OpenLoginForm();
         }
 
+        [TestMethod]
 
+        public void TestMethod4()
+        {
+            //Write a blog
+
+            // Preview a blog
+            //Publish a blog
+            //Set date and time
+
+            //Left Side menu
+            //Blog posts
+
+            //Edit a blog
+            //view a blog
+
+            //More
+            //Trash a blog
+            //copy a blog
+
+        }
 
         [TestCleanup]
         public void TestClean()
