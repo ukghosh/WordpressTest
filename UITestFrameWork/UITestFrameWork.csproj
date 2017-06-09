@@ -58,6 +58,8 @@
     <Compile Include="IEProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProviderFactory.cs" />
+    <Compile Include="Reports\TestCaseModel.cs" />
+    <Compile Include="Reports\TestReport.cs" />
     <Compile Include="WebObjects\CheckBox.cs" />
     <Compile Include="WebObjects\HyperLink.cs" />
     <Compile Include="WebObjects\RadioButton.cs" />

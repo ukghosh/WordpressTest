@@ -10,6 +10,8 @@ namespace Wordpress.tests
     [TestClass]
     public class UnitTest1
     {
+        //TestContext is predefined in .Net TestFramework
+       public TestContext TestContext { get; set; }
         // Dependencies class is Injected here with the use of Dependencies.Inject(property)
         // private Dependencies Test { get { return Dependencies.Inject; } }    - or replaced with code below
         private Dependencies Test => Dependencies.Inject;
@@ -18,17 +20,22 @@ namespace Wordpress.tests
         public void TestInit()
         {            
             DriverContext.New(ProviderFactory.AppConfig());
-            Dependencies.New();         
-          
-          
+            Dependencies.New();
+            Test.Report.SetTitle(TestContext.TestName);
+
+
         }
 
         [TestMethod]
         public void TestMethod1()
-        {           
+        {
+            //Test.Report.SetTitle("TestMethod1");
+            Test.Report.NewStep("Open Page");                 
            Test.WordpressHome.OpenPage();
-           Test.WordpressHome.OpenLoginForm();
-           Test.LoginForm.Login();
+            Test.Report.NewStep("Open Login form");
+            Test.WordpressHome.OpenLoginForm();
+            Test.LoginForm.Login();
+           
         }
 
         [TestMethod]
@@ -36,6 +43,13 @@ namespace Wordpress.tests
         {
             Test.WordpressHome.OpenPage();
             Test.WordpressHome.OpenLoginForm();
+        }
+
+        [TestMethod]
+        public void FailedTest()
+        {
+            //Test.Report.SetTitle("Failed Test");
+            Test.Driver.FindElement(By.Id("")).Click();
         }
 
         [TestMethod]
@@ -68,9 +82,22 @@ namespace Wordpress.tests
 
         }
 
+       
+
         [TestCleanup]
         public void TestClean()
         {
+            if (this.TestContext.CurrentTestOutcome == UnitTestOutcome.Passed)
+            {
+                Test.Report.Passed();                
+            }
+            else
+            {
+                
+                Test.Report.Failed();
+            }
+
+            Test.Report.Flush();
             DriverContext.Release();
         }
     }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UITestFrameWork;
+using UITestFrameWork.Reports;
 using Wordpress.steps.PageObjects;
 
 namespace Wordpress.steps
@@ -14,11 +15,14 @@ namespace Wordpress.steps
         private static Dependencies _context;       
         
 
+
         // private keyword in the Constructor - Prevents creating a new instance of this class from outside of this class
+        //Singleton Design pattern 
         private Dependencies()
         {
             this.WordpressHome = new WordPressHome(this);
             this.LoginForm = new LoginPage(this);
+            this.Report = new TestReport();
         }
 
         //the created new instance is accessed by this property 
@@ -26,6 +30,7 @@ namespace Wordpress.steps
 
         public WordPressHome WordpressHome { get; private set; }
         public LoginPage LoginForm { get; private set; }
+        public TestReport Report { get; private set; }
 
         public IWebDriver Driver
         {
