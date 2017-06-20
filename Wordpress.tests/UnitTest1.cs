@@ -31,7 +31,7 @@ namespace Wordpress.tests
         {
             //Test.Report.SetTitle("TestMethod1");
             Test.Report.NewStep("Open Page");                 
-           Test.WordpressHome.OpenPage();
+            Test.WordpressHome.OpenPage();
             Test.Report.NewStep("Open Login form");
             Test.WordpressHome.OpenLoginForm();
             Test.LoginForm.Login();
